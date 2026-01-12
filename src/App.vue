@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import {Button} from "./components/ui";
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import DashboardLayout from './layouts/DashboardLayout.vue';
+import { menus } from './features/dashboard/data/menus';
+
+const route = useRoute();
+const isDesignSystem = computed(() => route.path === '/ui-design');
 </script>
+
 <template>
-<router-view/>
- <div class="flex min-h-screen justify-center items-center ">
-   <RouterLink to="/ui-design">
-     <Button variant="destructive" >Ui Design System</Button>
-   </RouterLink>
- </div>
+  <RouterView v-if="isDesignSystem" />
+  <DashboardLayout v-else :menus="menus">
+    <RouterView />
+  </DashboardLayout>
 </template>
