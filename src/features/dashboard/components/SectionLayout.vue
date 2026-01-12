@@ -62,7 +62,7 @@ const statusClass = (status: string) => {
 </script>
 
 <template>
-  <section class="space-y-8">
+  <section class="space-y-8 bg-[#F4F4F5]">
     <header class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div class="animate-fade-in">
         <p class="text-xs uppercase tracking-[0.24em] text-slate-400">
@@ -162,18 +162,7 @@ const statusClass = (status: string) => {
           </div>
         </div>
 
-        <div class="rounded-2xl bg-slate-900 p-4 text-slate-100 shadow-lg">
-          <p class="text-xs uppercase tracking-[0.2em] text-slate-300">Tip</p>
-          <p class="mt-2 text-sm text-slate-100">
-            Set filters here to spotlight teams that need attention without losing momentum.
-          </p>
-          <button
-            type="button"
-            class="mt-4 w-full rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs font-semibold text-white/90 transition hover:bg-white/20"
-          >
-            Customize view
-          </button>
-        </div>
+
       </aside>
     </div>
   </section>

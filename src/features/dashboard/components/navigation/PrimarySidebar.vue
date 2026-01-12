@@ -18,7 +18,7 @@ const isActive = (id: string) => id === props.activeMenuId;
   >
 
 
-    <nav class="mt-8 flex flex-1 flex-col items-center gap-3">
+    <nav class=" flex flex-1 flex-col items-center gap-3">
       <button
         v-for="menu in props.menus"
         :key="menu.id"
@@ -51,6 +51,11 @@ const isActive = (id: string) => id === props.activeMenuId;
       </button>
     </nav>
 
+    <slot name="footer">
+      <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/10 text-xs font-semibold text-slate-600">
+        AL
+      </div>
+    </slot>
     <slot name="footer">
       <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/10 text-xs font-semibold text-slate-600">
         AL

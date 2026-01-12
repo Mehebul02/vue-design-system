@@ -54,26 +54,10 @@ const isActive = (id: string) => id === props.activeSubMenuId;
         @click="emit('select', child.id)"
       >
         <span>{{ child.label }}</span>
-        <span
-          class="h-2 w-2 rounded-full"
-          :class="isActive(child.id) ? 'bg-amber-300' : 'bg-slate-200'"
-        ></span>
+
       </button>
     </nav>
 
-    <div class="px-4 pb-6">
-      <div class="rounded-2xl bg-slate-950 p-4 text-slate-100 shadow-lg">
-        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Quick tip</p>
-        <p class="mt-2 text-sm text-slate-100">
-          Jump between sub-sections to keep your workflows tight and focused.
-        </p>
-        <button
-          type="button"
-          class="mt-4 w-full rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs font-semibold text-white/90 transition hover:bg-white/20"
-        >
-          Learn shortcuts
-        </button>
-      </div>
-    </div>
+
   </aside>
 </template>

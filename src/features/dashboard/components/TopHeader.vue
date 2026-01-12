@@ -1,17 +1,19 @@
 <script setup lang="ts">
+import {ref} from "vue";
+
 const searchQuery = defineModel<string>({ default: '' });
 
 const emit = defineEmits<{
   (e: 'toggle-sidebar'): void;
 }>();
 
+const name = ref("ljflkasj");
 
 const iconBtnClass = "flex h-9 w-9 items-center justify-center rounded-full border border-transparent text-slate-500 transition-all hover:border-slate-200 hover:bg-slate-100 hover:text-slate-900 active:scale-95";
 </script>
 
 <template>
-  <header class="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-3 bg-[#F4F4F5] border-b border-slate-100 sm:px-10">
-
+  <header  class="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-3 bg-[#F4F4F5] border-b border-slate-100 sm:px-10">
     <div class="flex items-center gap-3">
       <slot name="left">
         <button
