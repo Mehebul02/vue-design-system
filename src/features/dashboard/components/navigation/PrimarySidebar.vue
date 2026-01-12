@@ -14,7 +14,7 @@ const isActive = (id: string) => id === props.activeMenuId;
 
 <template>
   <aside
-    class="fixed left-0 top-16 z-40 flex h-[calc(100vh-4rem)] w-16 flex-col items-center border-r border-slate-800 bg-slate-950 text-slate-100"
+    class="fixed left-0 top-16 z-40 flex h-[calc(100vh-4rem)] w-16 flex-col items-center border-r border-slate-200/80 bg-[#F4F4F5] text-slate-900"
   >
 
 
@@ -26,8 +26,8 @@ const isActive = (id: string) => id === props.activeMenuId;
         class="group relative flex h-11 w-11 items-center justify-center rounded-2xl transition"
         :class="
           isActive(menu.id)
-            ? 'bg-white/10 text-white shadow-md'
-            : 'text-slate-400 hover:bg-white/5 hover:text-white'
+            ? 'bg-slate-900 text-white shadow-md'
+            : 'text-slate-500 hover:bg-slate-200/70 hover:text-slate-900'
         "
         :title="menu.label"
         :aria-current="isActive(menu.id) ? 'page' : undefined"
@@ -52,7 +52,7 @@ const isActive = (id: string) => id === props.activeMenuId;
     </nav>
 
     <slot name="footer">
-      <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 text-xs font-semibold text-slate-200">
+      <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/10 text-xs font-semibold text-slate-600">
         AL
       </div>
     </slot>
