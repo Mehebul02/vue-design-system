@@ -60,9 +60,8 @@ const statusClass = (status: string) => {
   return 'bg-slate-100 text-slate-600';
 };
 </script>
-
 <template>
-  <section class="space-y-8 bg-[#F4F4F5]">
+  <section class="space-y-8 ">
     <header class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div class="animate-fade-in">
         <p class="text-xs uppercase tracking-[0.24em] text-slate-400">

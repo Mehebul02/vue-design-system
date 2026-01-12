@@ -45,7 +45,7 @@ const isActive = (id: string) => id === props.activeSubMenuId;
         v-for="child in props.menu.children"
         :key="child.id"
         type="button"
-        class="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold transition"
+        class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-semibold transition"
         :class="
           isActive(child.id)
             ? 'bg-slate-900 text-white shadow-sm'
@@ -53,7 +53,18 @@ const isActive = (id: string) => id === props.activeSubMenuId;
         "
         @click="emit('select', child.id)"
       >
-        <span>{{ child.label }}</span>
+        <svg
+          viewBox="0 0 24 24"
+          class="h-4 w-4 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path v-for="(path, index) in props.menu.icon" :key="index" :d="path" />
+        </svg>
+        <span class="truncate">{{ child.label }}</span>
 
       </button>
     </nav>

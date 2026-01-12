@@ -84,15 +84,9 @@ const setSearchQuery = (value: string) => {
 </script>
 
 <template>
-  <div class="relative min-h-screen bg-slate-50 text-slate-900">
-    <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <div class="absolute -top-32 -right-24 h-72 w-72 rounded-full bg-amber-200/40 blur-3xl"></div>
-      <div class="absolute top-32 -left-20 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-emerald-200/30 blur-3xl"></div>
-    </div>
-
+  <div class="relative min-h-screen  text-slate-900">
     <header
-      class="sticky top-0 z-30 flex h-16 items-center border-b border-slate-200/80 bg-white shadow-sm"
+      class="sticky top-0 z-30 flex h-16 items-center border-b "
     >
       <TopHeader v-model="searchQuery" @toggle-sidebar="toggleSidebar">
         <template v-if="slots['header-left']" #left>
@@ -122,7 +116,6 @@ const setSearchQuery = (value: string) => {
         </template>
       </TopHeader>
     </header>
-
     <PrimarySidebar
       :menus="props.menus"
       :active-menu-id="activeMenuId"
