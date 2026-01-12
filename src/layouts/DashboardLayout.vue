@@ -91,6 +91,38 @@ const setSearchQuery = (value: string) => {
       <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-emerald-200/30 blur-3xl"></div>
     </div>
 
+    <header
+      class="sticky top-0 z-30 flex h-16 items-center border-b border-slate-200/80 bg-white shadow-sm"
+    >
+      <TopHeader v-model="searchQuery" @toggle-sidebar="toggleSidebar">
+        <template v-if="slots['header-left']" #left>
+          <slot
+            name="header-left"
+            :active-menu="activeMenu"
+            :active-sub-menu-label="activeSubMenuLabel"
+            :is-sidebar-open="isSidebarOpen"
+            :toggle-sidebar="toggleSidebar"
+            :open-sidebar="openSidebar"
+            :close-sidebar="closeSidebar"
+          />
+        </template>
+        <template v-if="slots['header-center']" #center>
+          <slot
+            name="header-center"
+            :search-query="searchQuery"
+            :set-search-query="setSearchQuery"
+          />
+        </template>
+        <template v-if="slots['header-right']" #right>
+          <slot
+            name="header-right"
+            :active-menu="activeMenu"
+            :active-sub-menu-label="activeSubMenuLabel"
+          />
+        </template>
+      </TopHeader>
+    </header>
+
     <PrimarySidebar
       :menus="props.menus"
       :active-menu-id="activeMenuId"
@@ -111,39 +143,7 @@ const setSearchQuery = (value: string) => {
       @close="closeSidebar"
     />
 
-    <div class="relative min-h-screen pl-16 lg:pl-80">
-      <header
-        class="sticky top-0 z-20 flex h-16 items-center border-b border-slate-200/80 bg-white px-6 shadow-sm"
-      >
-        <TopHeader v-model="searchQuery" @toggle-sidebar="toggleSidebar">
-          <template v-if="slots['header-left']" #left>
-            <slot
-              name="header-left"
-              :active-menu="activeMenu"
-              :active-sub-menu-label="activeSubMenuLabel"
-              :is-sidebar-open="isSidebarOpen"
-              :toggle-sidebar="toggleSidebar"
-              :open-sidebar="openSidebar"
-              :close-sidebar="closeSidebar"
-            />
-          </template>
-          <template v-if="slots['header-center']" #center>
-            <slot
-              name="header-center"
-              :search-query="searchQuery"
-              :set-search-query="setSearchQuery"
-            />
-          </template>
-          <template v-if="slots['header-right']" #right>
-            <slot
-              name="header-right"
-              :active-menu="activeMenu"
-              :active-sub-menu-label="activeSubMenuLabel"
-            />
-          </template>
-        </TopHeader>
-      </header>
-
+    <div class="relative min-h-[calc(100vh-4rem)] pl-16 lg:pl-80">
       <main class="px-6 py-8">
         <slot />
       </main>

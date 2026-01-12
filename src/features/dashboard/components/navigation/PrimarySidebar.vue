@@ -14,15 +14,9 @@ const isActive = (id: string) => id === props.activeMenuId;
 
 <template>
   <aside
-    class="fixed left-0 top-0 z-40 flex h-screen w-16 flex-col items-center border-r border-slate-800 bg-slate-950 text-slate-100"
+    class="fixed left-0 top-16 z-40 flex h-[calc(100vh-4rem)] w-16 flex-col items-center border-r border-slate-800 bg-slate-950 text-slate-100"
   >
-    <slot name="branding">
-      <div
-        class="mt-6 flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-200 via-orange-300 to-rose-400 text-xs font-semibold text-slate-900"
-      >
-        VX
-      </div>
-    </slot>
+
 
     <nav class="mt-8 flex flex-1 flex-col items-center gap-3">
       <button

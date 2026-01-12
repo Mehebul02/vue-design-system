@@ -19,11 +19,11 @@ const isActive = (id: string) => id === props.activeSubMenuId;
 <template>
   <div
     v-if="props.isOpen"
-    class="fixed inset-0 z-30 bg-slate-950/40 backdrop-blur-sm lg:hidden"
+    class="fixed inset-x-0 bottom-0 top-16 z-30 bg-slate-950/40 backdrop-blur-sm lg:hidden"
     @click="emit('close')"
   ></div>
   <aside
-    class="fixed left-16 top-0 z-40 flex h-screen w-64 flex-col border-r border-slate-200/80 bg-white/80 backdrop-blur-xl transition-transform duration-200"
+    class="fixed left-16 top-16 z-40 flex h-[calc(100vh-4rem)] w-64 flex-col border-r border-slate-200/80 bg-white/80 backdrop-blur-xl transition-transform duration-200"
     :class="props.isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
   >
     <div class="flex items-center justify-between px-5 py-5">

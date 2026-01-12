@@ -31,7 +31,7 @@ const handleToggleSidebar = () => {
 </script>
 
 <template>
-  <div class="grid w-full grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] items-center gap-4">
+  <div class="grid w-full grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] items-center gap-4 px-10">
     <div class="flex items-center gap-3">
       <slot name="left">
         <button
